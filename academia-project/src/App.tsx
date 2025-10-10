@@ -39,7 +39,7 @@ function App() {
               <li>Klikněte na jeden z odkazů pro stažení (např. "Libgen.li", "Z-Library") a stáhněte si soubor (obvykle PDF).</li>
             </ol>
             <p className="disclaimer">
-              <em>Upozornění: Vždy si ověřte legálnost stahování materiálů chráněných autorským právem ve vaší zemi. Stránku používejte zodpovědně.</em>
+              <em>Upozornění: Vždy si ověřte příponu stahovaných materiálů, nektěré mohou být v epub, nebo jiném formátu.</em>
             </p>
           </article>
           
@@ -97,7 +97,7 @@ function App() {
               </details>
             </div>
             <p className="disclaimer">
-              <em>Po této úpravě by měla stránka <a href="http://freedium.cfd" target="_blank" rel="noopener noreferrer">freedium.cfd</a> začít fungovat. Nástroj používejte zodpovědně.</em>
+              <em>Po této úpravě by měla stránka <a href="http://freedium.cfd" target="_blank" rel="noopener noreferrer">freedium.cfd</a> začít fungovat.</em>
             </p>
           </article>
         </section>
