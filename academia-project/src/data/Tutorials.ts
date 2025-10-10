@@ -47,6 +47,7 @@ export const tutorials: Tutorial[] = [
       url: 'https://www.connectedpapers.com/',
       text: 'Prozkoumat na Connected Papers'
     },
+    
     content: [
       {
         type: 'paragraph',
@@ -58,6 +59,24 @@ export const tutorials: Tutorial[] = [
       }
     ]
   },
+  {
+    id: 'inciteful-papers',
+    title: 'Inciteful: Vizualizace vědeckých prací',
+    category: 'Hledání článků',
+    shortDescription: 'Alternativní nástroj zdarma pro vizuální prozkoumání akademické literatury a nalezení souvisejících prací.',
+    link: {
+      url: 'https://www.inciteful.xyz/',
+      text: 'Prozkoumat na Inciteful'
+    },
+    
+    content: [
+      {
+        type: 'paragraph',
+        text: 'Zadejte jeden klíčový článek a Inciteful vám vygeneruje graf podobných prací. Rychle tak odhalíte nejdůležitější práce v oboru, klíčové autory a nové směry výzkumu.'
+      },
+    ]
+  },
+
 
   // =======================================================================
   // KATEGORIE: Správa citací

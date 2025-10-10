@@ -111,7 +111,7 @@ function Sidebar() {
         <h4 className="link-category-header">Správa citací</h4>
         <ul className="link-list">
           <li><a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer">Zotero</a> - Open-source správce citací.</li>
-          <li><a href="https://www.citacepro.com/cs" target="_blank" rel="noopener noreferrer">CitacePro</a> - Komerční správce citací.</li>
+          <li><a href="https://www.citacepro.com/cs/info" target="_blank" rel="noopener noreferrer">CitacePro</a> - Komerční správce citací.</li>
         </ul>
 
         <h4 className="link-category-header">Preprintové servery</h4>
