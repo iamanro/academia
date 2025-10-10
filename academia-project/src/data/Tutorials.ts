@@ -146,58 +146,6 @@ export const tutorials: Tutorial[] = [
 
 
   // =======================================================================
-  // KATEGORIE: Správa citací
-  // =======================================================================
-  {
-    id: 'zotero',
-    title: 'Zotero: Správa citací a bibliografie',
-    category: 'Správa citací',
-    shortDescription: 'Nezbytný open-source nástroj pro sběr, organizaci a citování vašich zdrojů.',
-    link: {
-      url: 'https://www.zotero.org/',
-      text: 'Stáhnout Zotero'
-    },
-    content: [
-      {
-        type: 'paragraph',
-        text: 'Citační manažer je základní kámen efektivní akademické práce. Umožňuje vám ukládat zdroje jedním klikem přímo z prohlížeče a následně je automaticky citovat ve vašem textovém editoru.'
-      },
-      {
-        type: 'list',
-        text: [
-          'Zotero Connector: Rozšíření do prohlížeče pro ukládání článků, knih a webových stránek.',
-          'Integrace s Word/Google Docs: Doplněk pro vkládání citací a automatické generování seznamu literatury.',
-          'Organizace: Třídění zdrojů do kolekcí, přidávání štítků a poznámek k PDF souborům.'
-        ]
-      },
-      {
-        type: 'note',
-        text: 'Nástroj je zcela zdarma a existuje pro něj obrovská komunitní podpora a množství doplňků.'
-      }
-    ]
-  },
-  {
-    id: 'citacepro',
-    title: 'CitacePro: Správa citací a bibliografie',
-    category: 'Správa citací',
-    shortDescription: 'Placený nástroj pro sběr, organizaci a citování vašich zdrojů.',
-    link: {
-      url: 'https://www.citacepro.com/cs/',
-      text: 'Stáhnout citacepro'
-    },
-    content: [
-      {
-        type: 'paragraph',
-        text: 'Citační manažer je základní kámen efektivní akademické práce. Umožňuje vám ukládat zdroje jedním klikem přímo z prohlížeče a následně je automaticky citovat ve vašem textovém editoru.'
-      },
-      {
-        type: 'note',
-        text: 'Nástroj si UO platí, ale je to otřesný nástroj, který v žádném případě nedoporučuji. Lepší volbou je Zotero.'
-      }
-    ]
-  },
-
-  // =======================================================================
   // KATEGORIE: Psaní
   // =======================================================================
   {
