@@ -5,17 +5,18 @@ import './App.css'; // Importujeme CSS pro stylování
 // Cesta v 'pdfUrl' musí odpovídat umístění souboru ve složce `public/pdfs/`.
 const publications = [
   {
-    title: 'Název mé první skvělé publikace',
-    author: 'Jan Novák',
-    year: 2024,
-    pdfUrl: '/pdfs/placeholder1.pdf', // Cesta k vašemu PDF
+    title: 'Writing your dissertation in fifteen minutes a day',
+    author: 'Joan Bolker',
+    year: 1998,
+    pdfUrl: '/pdfs/Writing your dissertation in fifteen minutes a day.pdf', // Cesta k vašemu PDF
   },
+  /*
   {
-    title: 'Další významný článek o něčem',
+  title: 'Další významný článek o něčem',
     author: 'Eva Svobodová',
     year: 2023,
     pdfUrl: '/pdfs/placeholder2.pdf', // Cesta k vašemu PDF
-  },
+  },*/
   // ...přidejte další publikace podle potřeby
 ];
 
@@ -44,8 +45,8 @@ function App() {
     const body = encodeURIComponent(
       `Jméno publikace: ${formData.name}\nOdkaz: ${formData.link}\n\nPoznámka:\n${formData.note}`
     );
-    // ZDE DOPLŇTE SVŮJ EMAIL!
-    window.location.href = `mailto:vas-email@domena.cz?subject=${subject}&body=${body}`;
+    // ZDE DOPLŇTE SVŮJ EMAIL!  
+    window.location.href = `mailto:antonin.rousek@unob.cz?subject=${subject}&body=${body}`;
     setShowRequestForm(false); // Zavře formulář po odeslání
   };
 
