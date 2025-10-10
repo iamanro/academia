@@ -96,14 +96,14 @@ function Sidebar() {
 
         <h4 className="link-category-header">Vyhledávání literatury</h4>
         <ul className="link-list">
-          <li><a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a> - Vyhledávač akademických článků a publikací(jako google).</li>
+          <li><a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a> - Vyhledávač akademických článků a publikací ("Google pro vědu").</li>
           <li><a href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer">Scopus</a> - Databáze akademických článků.</li>
           <li><a href="https://www.webofscience.com/" target="_blank" rel="noopener noreferrer">Web of Science</a> - Databáze akademických článků.</li>
         </ul>
 
         <h4 className="link-category-header">Profily a sítě vědců</h4>
         <ul className="link-list">
-          <li><a href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer">ResearchGate</a> - Sociální síť pro vědce..</li>
+          <li><a href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer">ResearchGate</a> - Sociální síť pro vědce.</li>
           <li><a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID</a> - Unikátní digitální identifikátor výzkumníka.</li>
           <li><a href="https://www.academia.edu/" target="_blank" rel="noopener noreferrer">Academia.edu</a> - Alternativa k ResearchGate.</li>
         </ul>
