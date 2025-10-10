@@ -1,5 +1,5 @@
 // /src/assets/components/Sidebar.tsx
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { FiPlus, FiMinus, FiExternalLink } from 'react-icons/fi';
 import { tutorials } from '../../data/Tutorials';
 import type { Tutorial } from '../../types';

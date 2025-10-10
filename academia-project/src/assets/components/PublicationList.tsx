@@ -1,5 +1,4 @@
 // /src/assets/components/PublicationList.tsx
-import React from 'react';
 import { FiFileText, FiDownload } from 'react-icons/fi';
 import type { Publication } from '../../types';
 
