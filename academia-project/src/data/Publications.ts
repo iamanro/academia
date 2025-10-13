@@ -9,7 +9,7 @@ export const publications = [
   {
     title: 'The Dissertation Journey - A Practical and Comprehensive Guide to Planning, Writing, and Defending Your Dissertation',
     author: 'Lura Hyatt, Carol Roberts',
-    year: '2024',
+    year: 2024,
     pdfUrl: '/academia/pdfs/The Dissertation Journey - A Practical and Comprehensive Guide to Planning, Writing, and Defending Your Dissertation.pdf',
   }
   /*
