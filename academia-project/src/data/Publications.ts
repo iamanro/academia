@@ -6,6 +6,12 @@ export const publications = [
     year: 1998,
     pdfUrl: '/academia/pdfs/Writing your dissertation in fifteen minutes a day.pdf',
   },
+  {
+    title: 'The Dissertation Journey - A Practical and Comprehensive Guide to Planning, Writing, and Defending Your Dissertation',
+    author: 'Lura Hyatt, Carol Roberts',
+    year: '2024',
+    pdfUrl: '/academia/pdfs/The Dissertation Journey - A Practical and Comprehensive Guide to Planning, Writing, and Defending Your Dissertation.pdf',
+  }
   /*
   {
     title: 'How to Write a Lot: A Practical Guide to Productive Academic Writing',
