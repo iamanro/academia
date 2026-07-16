@@ -1,16 +1,19 @@
 /* --- Globální nastavení a proměnné --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Font Inter je načítán přes <link> v index.html (bez render-blocking @import). */
 
 :root {
   /* Barevná paleta */
   --c-primary: #1a73e8; /* Google modrá pro moderní feel */
   --c-primary-hover: #1765cc;
-  --c-background: #f7f9fc;
+  --c-primary-soft: rgba(26, 115, 232, 0.1);
+  --c-background: #f6f8fc;
   --c-surface: #ffffff; /* Povrchy jako karty */
-  --c-text-primary: #202124;
+  --c-surface-muted: #eef2f9;
+  --c-text-primary: #1f2430;
   --c-text-secondary: #5f6368;
-  --c-border: #dfe1e5;
-  --c-focus-ring: rgba(26, 115, 232, 0.2);
+  --c-border: #e2e6ee;
+  --c-on-primary: #ffffff;
+  --c-focus-ring: rgba(26, 115, 232, 0.35);
 
   /* Velikosti písma */
   --fs-base: 16px;
@@ -29,16 +32,19 @@
   --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Základní podpora tmavého režimu --- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --c-background: #121212;
-    --c-surface: #1e1e1e;
-    --c-text-primary: #e8eaed;
-    --c-text-secondary: #9aa0a6;
-    --c-border: #3c4043;
-    --c-focus-ring: rgba(138, 180, 248, 0.3);
-  }
+/* --- Tmavý režim (řízený atributem data-theme na <html>) --- */
+:root[data-theme='dark'] {
+  --c-primary: #8ab4f8;
+  --c-primary-hover: #aecbfa;
+  --c-primary-soft: rgba(138, 180, 248, 0.16);
+  --c-background: #0f1115;
+  --c-surface: #191c22;
+  --c-surface-muted: #21252e;
+  --c-text-primary: #e8eaed;
+  --c-text-secondary: #9aa0a6;
+  --c-border: #2c313b;
+  --c-on-primary: #0f1115;
+  --c-focus-ring: rgba(138, 180, 248, 0.45);
 }
 
 /* --- Základní styly a reset --- */
@@ -75,21 +81,84 @@ button, input, select, a {
 }
 
 .app-header {
-  text-align: center;
   margin-bottom: calc(var(--spacing) * 3);
+}
+
+.app-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing);
+  margin-bottom: calc(var(--spacing) * 2.5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--c-primary), #6aa9ff);
+  color: #fff;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-name {
+  font-size: var(--fs-lg);
+  letter-spacing: -0.01em;
 }
 
 .app-header h1 {
   font-size: var(--fs-h1);
   font-weight: 700;
-  margin: 0 0 calc(var(--spacing) / 2);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+  margin: 0 0 calc(var(--spacing) * 0.75);
 }
 
 .app-header p {
   font-size: var(--fs-lg);
   color: var(--c-text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* --- Přepínač motivu --- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background-color: var(--c-surface);
+  color: var(--c-text-secondary);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.theme-toggle:hover {
+  color: var(--c-text-primary);
+  border-color: var(--c-primary);
+}
+.theme-toggle svg {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 520px) {
+  .theme-toggle-label {
+    display: none;
+  }
 }
 
 /* --- Karty --- */
@@ -156,11 +225,11 @@ button, input, select, a {
   gap: calc(var(--spacing) / 2);
   padding: 0.75rem calc(var(--spacing) * 1.25);
   background-color: var(--c-primary);
-  color: white;
+  color: var(--c-on-primary);
   border: none;
   border-radius: calc(var(--radius) / 1.5);
   font-size: var(--fs-base);
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
 }
 .add-button:hover {
@@ -413,20 +482,14 @@ button, input, select, a {
 }
 
 .accordion-content {
-  /* Nová, robustnější metoda animace */
-  max-height: 0;
+  /* Výška (max-height) je nastavována inline stylem z naměřené výšky obsahu. */
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out; /* Mírně upravená animace pro plynulost */
-}
-
-.accordion-item.is-open .accordion-content {
-  /* Nastavíme dostatečně velkou hodnotu, aby se vešel jakýkoliv obsah */
-  max-height: 100000px; /* Můžete zvýšit, pokud máte velmi dlouhé návody */
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .accordion-content-inner {
-  overflow: hidden;
-  padding: 0 var(--spacing) var(--spacing) var(--spacing);
+  padding: 0 var(--spacing) var(--spacing);
 }
 .accordion-content-inner p,
 .accordion-content-inner ol {
@@ -542,4 +605,138 @@ button, input, select, a {
 
 .link-list a:hover {
   text-decoration: underline;
+}
+
+/* --- Nadpis sekce s počtem --- */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.count-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background-color: var(--c-primary-soft);
+  color: var(--c-primary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+/* --- Plynulejší přechody na dlaždicích a kartách --- */
+.publication-tile,
+.info-card,
+.accordion-item {
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition), background-color var(--transition);
+}
+
+.info-card:hover {
+  border-color: color-mix(in srgb, var(--c-primary) 30%, var(--c-border));
+}
+
+/* --- Filtr kategorií návodů --- */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 calc(var(--spacing) * 1.5);
+}
+
+.category-chip {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  background-color: var(--c-surface-muted);
+  color: var(--c-text-secondary);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  cursor: pointer;
+}
+.category-chip:hover {
+  color: var(--c-text-primary);
+  border-color: var(--c-primary);
+}
+.category-chip.is-active {
+  background-color: var(--c-primary);
+  border-color: var(--c-primary);
+  color: var(--c-on-primary);
+}
+
+/* --- Formulář v modálním okně --- */
+.form-group {
+  margin-bottom: var(--spacing);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--c-border);
+  border-radius: calc(var(--radius) / 1.5);
+  background-color: var(--c-background);
+  color: var(--c-text-primary);
+  font-family: inherit;
+  font-size: var(--fs-base);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 3px var(--c-focus-ring);
+}
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: calc(var(--radius) / 1.5);
+  background-color: var(--c-primary);
+  color: var(--c-on-primary);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  cursor: pointer;
+}
+.submit-button:hover {
+  background-color: var(--c-primary-hover);
+}
+
+/* --- Kontakt v patičce --- */
+.footer-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  color: var(--c-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-contact:hover {
+  text-decoration: underline;
+}
+
+/* --- Prázdný stav --- */
+.empty-state {
+  padding: calc(var(--spacing) * 2);
+  text-align: center;
+  color: var(--c-text-secondary);
+  background-color: var(--c-surface-muted);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius);
 }
