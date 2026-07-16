@@ -1,12 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/academia/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/academia/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>academia-project</title>
-    <script type="module" crossorigin src="/academia/assets/index-s8L0eRlY.js"></script>
-    <link rel="stylesheet" crossorigin href="/academia/assets/index-xJSe-MpM.css">
+    <meta
+      name="description"
+      content="Akademický rozcestník – knihovna publikací, nástrojů a praktických návodů pro doktorské studium."
+    />
+    <meta name="theme-color" content="#1a73e8" />
+    <meta property="og:title" content="Akademický rozcestník" />
+    <meta
+      property="og:description"
+      content="Knihovna publikací, nástrojů a praktických návodů pro doktorské studium."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Akademický rozcestník</title>
+    <script>
+      // Nastaví motiv před prvním vykreslením (zabrání probliknutí).
+      (function () {
+        try {
+          var pref = localStorage.getItem('academia-theme') || 'system';
+          var dark =
+            pref === 'dark' ||
+            (pref === 'system' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/academia/assets/index-DrTU9PhF.js"></script>
+    <link rel="stylesheet" crossorigin href="/academia/assets/index-B4xQlZUa.css">
   </head>
   <body>
     <div id="root"></div>
