@@ -13,7 +13,7 @@ import { useTheme } from './hooks/useTheme';
 
 import './App.css';
 
-const CONTACT_EMAIL = 'antonin.rousek@unob.cz';
+const CONTACT_EMAIL = 'academia@iamanro.dev';
 
 function App() {
   const { preference, cycleTheme } = useTheme();
