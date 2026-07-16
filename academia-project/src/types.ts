@@ -5,7 +5,15 @@ export interface Publication {
   title: string;
   author: string;
   year: number;
-  pdfUrl: string;
+  // Lokální PDF ke stažení. Pokud chybí, zobrazí se externí odkaz `link`.
+  pdfUrl?: string;
+  // Externí odkaz (např. kde knihu sehnat), pokud není k dispozici PDF.
+  link?: {
+    url: string;
+    text: string;
+  };
+  // Krátké zdůvodnění / anotace (volitelné).
+  note?: string;
 }
 
 // Typ pro data z formuláře, použitý v App a RequestFormModal.

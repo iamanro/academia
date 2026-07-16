@@ -269,6 +269,12 @@ button, input, select, a {
   color: var(--c-text-secondary);
   font-size: var(--fs-sm);
 }
+.publication-info .publication-note {
+  margin-top: calc(var(--spacing) / 2);
+  color: var(--c-text-primary);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
 
 .publication-actions {
   margin-top: calc(var(--spacing) * 1.5);

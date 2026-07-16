@@ -191,6 +191,16 @@ function Sidebar() {
           <li><a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">arXiv.org</a> - Pro fyziku, matematiku, informatiku.</li>
           <li><a href="https://www.biorxiv.org/" target="_blank" rel="noopener noreferrer">bioRxiv</a> - Pro biologické vědy.</li>
         </ul>
+
+        <h4 className="link-category-header">Obrana a bezpečnost</h4>
+        <ul className="link-list">
+          <li><a href="https://www.dtic.mil/" target="_blank" rel="noopener noreferrer">DTIC</a> - Defense Technical Information Center: rozsáhlý archiv obranného výzkumu.</li>
+          <li><a href="https://www.sto.nato.int/" target="_blank" rel="noopener noreferrer">NATO STO</a> - Publikace Science &amp; Technology Organization NATO.</li>
+          <li><a href="https://www.rand.org/" target="_blank" rel="noopener noreferrer">RAND Corporation</a> - Analytické reporty k bezpečnosti a obraně (zdarma).</li>
+          <li><a href="https://www.sipri.org/" target="_blank" rel="noopener noreferrer">SIPRI</a> - Data o zbrojení, výdajích na obranu a odzbrojení.</li>
+          <li><a href="https://www.obranaastrategie.cz/" target="_blank" rel="noopener noreferrer">Obrana a strategie</a> - Recenzovaný český časopis (MO ČR).</li>
+          <li><a href="https://www.vojenskerozhledy.cz/" target="_blank" rel="noopener noreferrer">Vojenské rozhledy</a> - Český vojenský vědecký časopis.</li>
+        </ul>
       </section>
     </div>
   );
